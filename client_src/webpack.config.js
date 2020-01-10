@@ -1,14 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
 const dotenv = require('dotenv');
 
 module.exports = {
     entry: ['@babel/polyfill', './src/index.js'],
     output: {
-        path: path.join(__dirname, '/dist'),
-        publicPath: '/',
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index_bundle.js'
     },
     devServer: {
@@ -26,7 +24,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$$/,
+                test: /\.scss$/,
                 use: [
                     {
                         loader: 'style-loader'
