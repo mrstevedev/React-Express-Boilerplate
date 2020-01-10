@@ -12,13 +12,13 @@ app.get('/api/getRecords', (req, res) => {
 
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client_src/dist/index.html'));
+    res.sendFile(path.join(__dirname, './client_src/src/index.html'));
 });
 
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
     // Set static folder 
-    app.use(express.static('client_src/dist'));
+    app.use(express.static(path.join('client_src/dist')));
 
     
     app.get('*', (req, res) => {
