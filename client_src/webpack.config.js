@@ -7,6 +7,7 @@ module.exports = {
     entry: ['@babel/polyfill', './src/index.js'],
     output: {
         path: path.resolve(__dirname, './dist'),
+        publicPath: '/',
         filename: 'index_bundle.js'
     },
     devServer: {
@@ -52,7 +53,7 @@ module.exports = {
             }
         }),
         new CopyWebpackPlugin([
-            {from: './public'}
+            {from: './public/'}
         ])
     ]
 }
