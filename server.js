@@ -21,12 +21,15 @@ app.get('*', (req, res) => {
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
     // Set static folder 
+    console.log('in production');
     app.use(express.static('./client_src/dist'));
 
     
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client_src', 'dist', 'index.html'));
     });
+} else {
+    console.log("not in production");
 }
 
 const PORT = process.env.PORT || 5002;
