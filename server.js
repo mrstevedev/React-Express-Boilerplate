@@ -8,10 +8,7 @@ app.get('/api/getRecords', (req, res) => {
     console.log('Sent a list of vinyl records');
 });
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('Server started');
-});
+
 
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
@@ -27,8 +24,7 @@ if(process.env.NODE_ENV === 'production'){
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client_src', 'dist', 'index.html'));
     });
-} else {
-    console.log("not in production");
+    
 }
 
 const PORT = process.env.PORT || 5002;
