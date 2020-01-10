@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
     // Set static folder 
-    app.use(express.static('client_src/dist'));
+    app.use(express.static('./client_src/dist'));
 
     
     app.get('*', (req, res) => {
