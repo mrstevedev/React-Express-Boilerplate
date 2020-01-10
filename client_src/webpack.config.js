@@ -48,10 +48,7 @@ module.exports = {
     plugins: [
         // uses the index.html file as the template file
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            minify: {
-                collapseWhitespace: true
-            }
+            template: './src/index.html'
         }),
         new CopyWebpackPlugin([
             {from: './public'}
