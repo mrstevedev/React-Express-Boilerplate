@@ -10,6 +10,7 @@ app.get('/api/getRecords', (req, res) => {
 
 // Routes
 app.get('/', (req, res) => {
+    console.log('get /');
     res.send('Server started');
 });
 
