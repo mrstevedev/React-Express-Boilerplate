@@ -10,7 +10,6 @@ app.get('/api/getRecords', (req, res) => {
 
 // Routes
 app.get('/', (req, res) => {
-    console.log('get /');
     res.send('Server started');
 });
 
@@ -22,7 +21,6 @@ app.get('*', (req, res) => {
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
     // Set static folder 
-    console.log('in production');
     app.use(express.static('./client_src/dist'));
 
     
